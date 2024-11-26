@@ -1,0 +1,183 @@
+/* Estilo General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(circle, #001f3f, #1a001a);
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.title {
+  font-size: 4vw;
+  margin-bottom: 2em;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.decorative-image {
+  width: 20vw;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 2em;
+}
+
+.action-button {
+  font-size: 2vw;
+  padding: 1em 3em;
+  background: linear-gradient(45deg, #ff007f, #007bff);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Cuenta regresiva */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle, #001f3f, #4b0082);
+  position: relative;
+}
+
+.countdown-number {
+  position: absolute;
+  opacity: 0;
+  font-size: 15vw;
+  font-weight: bold;
+  color: white;
+  animation: countdown-animation 1s ease-in-out;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 15px #ff007f, 0 0 35px #007bff;
+}
+
+.countdown-number.active {
+  opacity: 1;
+}
+
+@keyframes countdown-animation {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Reproductor de video */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* Mantener el tamaño proporcional */
+  background: black;
+  padding: 1em;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.video-player {
+  height: 100%;
+  max-width: 90%; /* El reproductor nunca será más ancho que el 90% de la pantalla */
+  border: 3px solid white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Contenedor de las imágenes dinámicas */
+.dynamic-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-image {
+  position: absolute;
+  width: 10vw;
+  max-width: 100px;
+  opacity: 0.8;
+  transition: transform 1s ease-in-out;
+  animation: floatAnimation 5s infinite ease-in-out;
+}
+
+/* Ubicaciones de las imágenes flotantes */
+.image1 {
+  top: 5%;
+  left: 0;
+  animation-delay: 0s;
+}
+
+.image2 {
+  bottom: 5%;
+  left: 0;
+  animation-delay: 1.5s;
+}
+
+.image3 {
+  top: 5%;
+  right: 0;
+  animation-delay: 3s;
+}
+
+.image4 {
+  bottom: 5%;
+  right: 0;
+  animation-delay: 4.5s;
+}
+
+.image5 {
+  top: 50%;
+  left: 10%;
+  animation-delay: 2.5s;
+}
+
+.image6 {
+  bottom: 50%;
+  right: 10%;
+  animation-delay: 3.5s;
+}
+
+/* Animación para mover las imágenes */
+@keyframes floatAnimation {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(10%, -10%) scale(1.2);
+  }
+  50% {
+    transform: translate(-10%, 10%) scale(1.1);
+  }
+  75% {
+    transform: translate(5%, -5%) scale(1.3);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}

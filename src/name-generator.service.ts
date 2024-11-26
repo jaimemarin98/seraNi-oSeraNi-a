@@ -10,6 +10,7 @@ export class NameGeneratorService {
   constructor() { }
 
   generateRandomName(): string{
-    const randomIndex = Math.floor(Math.)
-  }
+    const randomIndex = Math.floor(Math.random() * this.names.length);
+    return this.names[randomIndex];}
+    
 }
